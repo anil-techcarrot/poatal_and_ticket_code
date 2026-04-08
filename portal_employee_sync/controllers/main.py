@@ -487,7 +487,7 @@ class PortalEmployeeSyncController(http.Controller):
             if keyword in address:
                 company = request.env['res.company'].sudo().search(
                     [('name', '=', 'techcarrot India Private Limited')],  # ← changed ilike to =
-                    limit=0
+                    limit=1
                 )
                 if company:
                     _logger.info("Company assigned: %s for address: %s", company.name, current_address)
